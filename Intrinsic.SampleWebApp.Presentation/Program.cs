@@ -1,7 +1,14 @@
+using Intrinsic.SampleWebApp.DAL;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDataAccessLayer(
+    builder.Configuration["ConnectionStrings:IntrinsicWebAppDatabase"]
+);
 
 var app = builder.Build();
 

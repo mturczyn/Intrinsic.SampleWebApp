@@ -17,3 +17,29 @@
         <a href="https://github.com/mturczyn">GitHub</a>
     </div>
 </div>
+
+<form method="post">
+    <fieldset>
+        <legend>Add feedback</legend>
+        <div>
+            <label for="FeedbackContent">Type feedback here:</label>
+            <input type="text" name="FeedbackContent" value=""/>
+        </div>
+        <div>
+            <label for="FeedbackAuthor">Your name:</label>
+            <input type="text" name="FeedbackAuthor" value="" />
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+    </fieldset>
+</form>
+
+<h2>Feedbacks</h2>
+<ul>
+    @foreach(var feedback in Model.Feedbacks)
+    {
+        <li>@feedback.Content <br /> <span style="font-style: italic">Written by @feedback.Author</span></li>
+    }
+</ul>
